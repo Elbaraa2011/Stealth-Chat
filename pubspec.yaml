@@ -1,0 +1,64 @@
+name: stealth_chat
+description: "Instagram-style decoy client with a covert direct-message room."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # --- Decoy UI ---
+  cached_network_image: ^3.4.1
+  google_fonts: ^6.2.1
+
+  # --- Covert layer ---
+  # `flutter_secure_storage` keeps long-term key material out of shared
+  # preferences; `supabase_flutter` is the blind relay the crypto service
+  # will publish through. libsodium arrives as `sodium` ^4 (the spec's
+  # flutter_sodium is abandoned and cannot resolve against secure_storage
+  # 9.x) as soon as something imports it — its build hook requires Visual
+  # Studio on Windows, so it stays out until the crypto service lands.
+  supabase_flutter: ^2.8.0
+  flutter_secure_storage: ^9.2.2
+
+  # --- Real video reels ---
+  video_player: ^2.9.2
+
+  flutter_svg: any
+  image_picker: ^1.2.4
+  record: ^7.1.2
+  path_provider: ^2.1.6
+  permission_handler: ^12.0.1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/UsersPfps/
+    - assets/images/stories/
+    - assets/images/posts/
+    - assets/images/avatar_posts/
+    - assets/videos/
+    - assets/fonts/
+    - assets/icons/
+    - assets/mockups/
+    - assets/splash/
+    - assets/auth/
+    # Supabase keys, generated from .env so device builds can read them too.
+    - assets/env.json
+
+  fonts:
+    - family: Billabong
+      fonts:
+        - asset: assets/fonts/Billabong.ttf

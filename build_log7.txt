@@ -1,0 +1,87 @@
+Running Gradle task 'assembleDebug'...                          
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/D:/Dev/.gradle/wrapper/dists/gradle-9.3.1-all/9ot9r568e8zfvvd4mn8rbu1j0/gradle-9.3.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+
+[sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+
+[sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+
+[sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+
+[sodium] WARNING: configure: WARNING: unrecognized options: --disable-0, --enable-0, --enable-0, --with-0
+
+[sodium] WARNING: configure: error: expected an absolute directory name for --prefix: 0
+
+Unhandled exception:
+Exception: D:\Dev\msysbin\bash.exe failed with exit code 1.
+#0      SodiumBuilder.exec (package:sodium/src/hooks/sodium_builder/sodium_builder.dart:199:7)
+<asynchronous suspension>
+#1      AutomakeBuilder._configure (package:sodium/src/hooks/sodium_builder/automake_builder.dart:108:7)
+<asynchronous suspension>
+#2      AutomakeBuilder.buildCached (package:sodium/src/hooks/sodium_builder/automake_builder.dart:37:5)
+<asynchronous suspension>
+#3      SodiumBuilder.build (package:sodium/src/hooks/sodium_builder/sodium_builder.dart:82:24)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///d:/dev/.pub-cache/hosted/pub.dev/sodium-4.0.4/hook/build.dart:43:17)
+<asynchronous suspension>
+#5      build (package:hooks/src/api/build_and_link.dart:250:5)
+<asynchronous suspension>
+#6      main (file:///d:/dev/.pub-cache/hosted/pub.dev/sodium-4.0.4/hook/build.dart:9:39)
+<asynchronous suspension>
+
+  Building assets for package:sodium failed.
+  build.dart returned with exit code: 255.
+  To reproduce run:
+  (cd D:\Dev\.pub-cache\hosted\pub.dev\sodium-4.0.4\; D:\Dev\Flutter\bin\cache\dart-sdk\bin\dart --packages=D:\Dev\stealth_chat\.dart_tool\package_config.json D:\Dev\stealth_chat\.dart_tool\hooks_runner\sodium\a0a819bd83\hook.dill --config=D:\Dev\stealth_chat\.dart_tool\hooks_runner\sodium\a0a819bd83\input.json )
+  stderr:
+  [sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+[sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+[sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+[sodium] WARNING: /usr/bin/expr: syntax error: unexpected argument '.github'
+[sodium] WARNING: configure: WARNING: unrecognized options: --disable-0, --enable-0, --enable-0, --with-0
+[sodium] WARNING: configure: error: expected an absolute directory name for --prefix: 0
+Unhandled exception:
+Exception: D:\Dev\msysbin\bash.exe failed with exit code 1.
+#0      SodiumBuilder.exec (package:sodium/src/hooks/sodium_builder/sodium_builder.dart:199:7)
+<asynchronous suspension>
+#1      AutomakeBuilder._configure (package:sodium/src/hooks/sodium_builder/automake_builder.dart:108:7)
+<asynchronous suspension>
+#2      AutomakeBuilder.buildCached (package:sodium/src/hooks/sodium_builder/automake_builder.dart:37:5)
+<asynchronous suspension>
+#3      SodiumBuilder.build (package:sodium/src/hooks/sodium_builder/sodium_builder.dart:82:24)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///d:/dev/.pub-cache/hosted/pub.dev/sodium-4.0.4/hook/build.dart:43:17)
+<asynchronous suspension>
+#5      build (package:hooks/src/api/build_and_link.dart:250:5)
+<asynchronous suspension>
+#6      main (file:///d:/dev/.pub-cache/hosted/pub.dev/sodium-4.0.4/hook/build.dart:9:39)
+<asynchronous suspension>
+
+  stdout:
+  [sodium] INFO: Detected Android toolchain: file:///D:/Dev/AndroidSDK/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/
+[sodium] INFO: Extracting source files to config-specific directory...
+[sodium] INFO: Starting build process...
+
+
+Target build_hooks failed: Error: Building native assets failed. See the logs for more details.
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command 'D:\Dev\Flutter\bin\flutter.bat'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 18s
+Running Gradle task 'assembleDebug'...                             18.9s
+Gradle task assembleDebug failed with exit code 1
