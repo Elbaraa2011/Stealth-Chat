@@ -7,9 +7,10 @@ import '../theme/ig_theme.dart';
 import 'primitives.dart';
 
 class ProfileHeader extends StatelessWidget {
-  const ProfileHeader({super.key, required this.user});
+  const ProfileHeader({super.key, required this.user, this.onSignOut});
 
   final StealthUser user;
+  final VoidCallback? onSignOut;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -22,7 +23,7 @@ class ProfileHeader extends StatelessWidget {
             const SizedBox(height: 15),
             _ThreadsHandle(user: user),
             const SizedBox(height: 10),
-            const _ProfileActions(),
+            _ProfileActions(onSignOut: onSignOut),
           ],
         ),
       );
@@ -300,7 +301,7 @@ class _ProfileActions extends StatelessWidget {
           const SizedBox(width: 5),
           const Expanded(child: _ActionButton(label: 'Share profile')),
           const SizedBox(width: 5),
-          const Expanded(
+          Expanded(
             child: _ActionButton(
               label: 'Log out',
               onTap: onSignOut,

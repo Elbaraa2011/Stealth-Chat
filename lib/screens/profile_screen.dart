@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../backend/auth_service.dart';
 import '../backend/models.dart';
 import '../data/fixtures.dart' as fixtures;
 import '../state/app_state.dart';
@@ -10,9 +11,6 @@ import '../widgets/profile_header.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-  const ProfileScreen({super.key, this.onSignOut});
-
-  final VoidCallback? onSignOut;
 
   // Pushys app section: mirrors the signed-in user on every build so the
   // profile, empty state and profile tab always reflect `jade12` (or whatever
@@ -25,9 +23,12 @@ class ProfileScreen extends StatelessWidget {
       initialIndex: 3,
       child: Column(
         children: <Widget>[
-          ProfileHeader(user: me, onSignOut: () async {
-    await AuthService.instance.signOut();
-  }),
+          ProfileHeader(
+            user: me,
+            onSignOut: () async {
+              await AuthService.instance.signOut();
+            },
+          ),
           _ProfileTabBar(user: me),
           Expanded(child: ProfileEmptyState(user: me)),
 
