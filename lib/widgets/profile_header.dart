@@ -289,7 +289,9 @@ class _ThreadsHandle extends StatelessWidget {
 }
 
 class _ProfileActions extends StatelessWidget {
-  const _ProfileActions();
+  const _ProfileActions({this.onSignOut});
+
+  final VoidCallback? onSignOut;
 
   @override
   Widget build(BuildContext context) => Row(
@@ -297,6 +299,13 @@ class _ProfileActions extends StatelessWidget {
           const Expanded(child: _ActionButton(label: 'Edit profile')),
           const SizedBox(width: 5),
           const Expanded(child: _ActionButton(label: 'Share profile')),
+          const SizedBox(width: 5),
+          const Expanded(
+            child: _ActionButton(
+              label: 'Log out',
+              onTap: onSignOut,
+            ),
+          ),
           const SizedBox(width: 5),
           SizedBox(
             width: 32,
@@ -317,9 +326,10 @@ class _ProfileActions extends StatelessWidget {
 }
 
 class _ActionButton extends StatelessWidget {
-  const _ActionButton({required this.label});
+  const _ActionButton({required this.label, this.onTap});
 
   final String label;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) => SizedBox(
@@ -328,7 +338,7 @@ class _ActionButton extends StatelessWidget {
           color: IgColors.surfaceHigh,
           borderRadius: BorderRadius.circular(8),
           child: InkWell(
-            onTap: () {},
+            onTap: onTap ?? () {},
             borderRadius: BorderRadius.circular(8),
             child: Center(
               child: Text(label, style: IgText.semibold(size: 13)),

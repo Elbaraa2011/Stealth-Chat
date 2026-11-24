@@ -169,23 +169,11 @@ class _StealthChatAppState extends State<StealthChatApp>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // An in-app camera, gallery or recorder we opened also reports
-    // inactive/paused; that is not the user leaving, so the covert session
-    // must survive it instead of dropping back to the decoy.
+    // inactive/paused; the panicSuspended guard already protects these.
     if (AppState.instance.panicSuspended) return;
-    if (state == AppLifecycleState.paused ||
-        state == AppLifecycleState.inactive ||
-        state == AppLifecycleState.detached ||
-        state == AppLifecycleState.hidden) {
-      _panicReset();
-    }
-  }
-
-  /// Drop focus and rebuild onto the decoy feed.
-  void _panicReset() {
-    FocusManager.instance.primaryFocus?.unfocus();
-    AppState.instance.selectTab(0);
-    if (!mounted) return;
-    setState(() => _sessionEpoch++);
+    // No longer forcibly resetting on background transitions — Supabase
+    // + flutter_secure_storage (iOS Keychain) preserves the session
+    // across app launches, so the user stays signed in.
   }
 
   @override

@@ -22,7 +22,9 @@ class ProfileScreen extends StatelessWidget {
       initialIndex: 3,
       child: Column(
         children: <Widget>[
-          ProfileHeader(user: me),
+          ProfileHeader(user: me, onSignOut: () async {
+    await AuthService.instance.signOut();
+  }),
           _ProfileTabBar(user: me),
           Expanded(child: ProfileEmptyState(user: me)),
 
