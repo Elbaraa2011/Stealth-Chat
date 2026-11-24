@@ -10,6 +10,9 @@ import '../widgets/profile_header.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
+  const ProfileScreen({super.key, this.onSignOut});
+
+  final VoidCallback? onSignOut;
 
   // Pushys app section: mirrors the signed-in user on every build so the
   // profile, empty state and profile tab always reflect `jade12` (or whatever
